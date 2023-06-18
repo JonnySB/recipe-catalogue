@@ -2,6 +2,43 @@
 
 {% block  content %}
 
-<h1>This is the index site</h1>
+<div>
+</div>
+
+<div class="album py-5 bg-body-tertiary">
+    
+    <div class="container">
+        
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            {% for recipe in recipes %}
+                
+            <div class="col">
+                <div class="card shadow-sm">
+                    {% comment %} <img src="img.jpg" class="img-fluid rounded" alt="..."> {% endcomment %}
+                    <img src="{{recipe.recipe_image.url}}" width="100%" height="255" object-fit="cover">
+                    <div class="card-body">
+                        <p class="card-text">{{recipe.recipe_name}}</p>
+                        <div class="d-flex justify-content-between align-items-center" style="font-size: 14px;">
+                            <p class="text-body-secondary">{{recipe.get_difficulty_level_display}}</p>
+                            <p class="text-body-secondary">{{recipe.get_cost_display}}</p>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <small class="text-body-secondary">Uploaded by: {{recipe.recipe_author}}</small>
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            {% endfor %}
+                    
+        </div>
+    
+    </div>
+
+</div>
 
 {% endblock  %}
