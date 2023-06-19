@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% block  content %}
+
+{% comment %} <form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="signup">
+</form> {% endcomment %}
+
+<main>
+    <div class="login-form-container">    
+        <div class="login-form">
+            <h1 class="h3 mb-3 fw-normal">Please register here:</h1>
+            
+            {% if form.errors %}
+                <div class="alert alert-warning alert-dismissibile fade show alert-register" role="alert">
+                    There was an error with your form...
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            {% endif %}
+            
+            <form method="POST">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+
+                    {% comment %} <div class="form-floating">
+                        <input type="text" class="form-control" name="{{form.username.label}}" placeholder="{{form.username.label}}">
+                        <p>{{form.username.label}}</p>
+                        {{form.username}}
+                        <p>{{form.password1.label}}</p>
+                        {{form.username}}
+                        <p>{{form.password2.label}}</p>
+                        {{form.username}}
+                        <label for="floatingInput">{{field.label}}</label>
+                    </div> {% endcomment %}
+                
+            
+                <!-- <div class="form-floating">
+                    <input type="text" class="form-control" name="username" placeholder="Username">
+                    <label for="floatingInput">username</label>
+                </div>
+            
+                <div class="form-floating">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
+                </div>
+
+                <div class="form-floating">
+                    <input type="password" class="form-control" name="password" placeholder="Password">
+                    <label for="floatingPassword">Confirm password</label>
+                </div> -->
+            
+                <div>
+                    <br>
+                </div>
+                <button class="btn btn-primary w-100 py-2" type="submit" value="signup">Sign up</button>
+            </form>
+        </div>    
+    </div>
+</main>
+
+
+{% endblock %}

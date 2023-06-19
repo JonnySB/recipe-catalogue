@@ -19,8 +19,9 @@
         {% for message in messages %}
             <br>
             <div class="alert-container">
-                <div class="alert alert-secondary alert" role="alert">
+                <div class="alert alert-warning alert-dismissibile fade show alert-register" role="alert">
                     {{message}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             </div>
         {% endfor %}

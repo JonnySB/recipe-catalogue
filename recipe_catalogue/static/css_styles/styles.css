@@ -29,5 +29,9 @@
 }
 
 .alert {
-    width: 600px
+    /* width: 600px */
+}
+
+.alert-registration {
+    width: 100%
 }
