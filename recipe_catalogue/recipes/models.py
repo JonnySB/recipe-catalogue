@@ -62,12 +62,18 @@ class Ingredient(models.Model):
     ingredient_name = models.CharField(max_length=30, unique=True)
     user = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
+    class Meta:
+        ordering = ['ingredient_name']
+    
     def __str__(self):
         return self.ingredient_name
 
 
 class Tag(models.Model):
     tag_name = models.CharField(max_length=50, unique=True)
+
+    class Meta:
+        ordering = ['tag_name']
 
     def __str__(self):
         return self.tag_name

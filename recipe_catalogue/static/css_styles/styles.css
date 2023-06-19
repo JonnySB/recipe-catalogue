@@ -1,0 +1,33 @@
+.nav-bar-options {
+    margin-right: 10px;
+}
+
+.recipe-card-author {
+    font-weight: 600;
+}
+
+.reduce_bottom_margin {
+    margin-bottom: 2px;
+}
+
+.increase_card_text_padding {
+    padding-left: 34px;
+    padding-right: 34px;
+}
+
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.alert-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert {
+    width: 600px
+}
