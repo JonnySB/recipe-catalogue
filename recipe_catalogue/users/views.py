@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.views.generic import CreateView
-from django.contrib.auth.forms import UserCreationForm
+from .forms import RegisterUserForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 
@@ -32,7 +32,7 @@ def logout_user(request):
 
 def register_user(request):
     if request.method == 'POST':
-        form = UserCreationForm(request.POST)
+        form = RegisterUserForm(request.POST)
         if form.is_valid():
             form.save()
             username = form.cleaned_data['username']
@@ -43,14 +43,10 @@ def register_user(request):
             return redirect('home')
 
     else:
-        form = UserCreationForm()
+        form = RegisterUserForm()
 
     return render(request, 'authenticate/register_user.html', {'form':form})
 
-class RegisterUserView(CreateView):
-    form_class = UserCreationForm
-    success_url = reverse_lazy('login_user')
-    template_name = 'authenticate/register_user.html'
 
 
 
