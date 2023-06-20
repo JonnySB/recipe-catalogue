@@ -22,7 +22,7 @@
                         </button>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="#">View profile</a></li>
-                            <li><a class="dropdown-item" href="#">Add new recipe</a></li>
+                            <li><a class="dropdown-item" href="{% url 'add_recipe' %}">Add new recipe</a></li>
                             <li><a class="dropdown-item" href="#">Manage account</a></li>
                             <li><a class="dropdown-item" href="{% url 'logout_user' %}">Log out</a></li>
                         </ul>
@@ -30,8 +30,10 @@
 
                 {% else %}
 
-                    <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="{% url 'home' %}" class="nav-link px-2 text-white">Public Recipies</a></li>
+                    <ul class="col-12 col-lg-auto me-lg-auto mb-md-0">
+                        <button type="button" class="btn btn-secondary">
+                            <a href="{% url 'home' %}" class="nav-link px-2 text-white nav-bar-options">Public Recipe Feed</a>
+                        </button>
                     </ul>
                 
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">

@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% block  content %}
+
+
+{{recipe.recipe_name}}
+{{recipe.recipe_image.url}}
+{{recipe.meal_time.}}
+
+
+<div class="col-lg-8">
+
+    <!-- Content Start -->
+    <article class="post-single">
+        <div class="post-thumbnail">
+            <img src="{{recipe.recipe_image.url}}" alt="post">
+        </div>
+      <h2 class="title">{{recipe.recipe_name}}</h2>
+      <div class="post-meta">
+        <div class="">
+            <span>Uploaded by: {{recipe.recipe_author}}</span>
+        </div>
+        <div class="">
+            <span>Mealtime: {{recipe.meal_time}}</span>
+        </div>
+        <div class="">
+            <span>Cost: {{recipe.get_cost_display}}</span>
+        </div>
+        <div class="">
+            <span>Difficulty: {{recipe.get_difficulty_level_display}}</span>
+        </div>
+        <div class="">
+            <span>Uploaded Date: {{recipe.uploaded_date}}</span>
+        </div>
+      </div>
+      <div class="post-content">
+        <div class="recipe-ingredients">
+            <h4>Ingredients</h4>
+            <ul class="ct-list">
+                {{recipe.ingredients}}
+
+          </ul>
+        </div>
+        <div class="recipe-instructions">
+          <h4>Instructions</h4>
+          {{recipe.instructions}}
+        </div>
+        
+      </div>
+    </article>
+    <!-- Content End -->
+
+{% endblock %}

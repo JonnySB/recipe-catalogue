@@ -131,3 +131,6 @@ STATICFILES_DIRS = (
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Added LOGIN_URL to redirect user to login if they have try to access a restricted view
+LOGIN_URL = '/users/login_user/'

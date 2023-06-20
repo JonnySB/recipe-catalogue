@@ -56,6 +56,10 @@ class Recipe(models.Model):
         ('pu','Public'),
     ]
     visibility = models.CharField(max_length=2,choices=VISIBILITY_CHOICES)
+
+
+    def __str__(self):
+        return self.recipe_name
     
 
 class Ingredient(models.Model):
