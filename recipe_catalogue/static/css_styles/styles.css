@@ -5,7 +5,11 @@
 }
 
 .nav-bar-options {
-    margin-right: 10px;
+    padding-left: 0px;
+}
+
+.nav-button-options {
+    margin-right: 30px;
 }
 
 .recipe-card-author {
@@ -53,4 +57,14 @@
 
 .red {
     border: 30px solid red;
+}
+
+.view-recipe-btn {
+    background-color: rgba(33, 37, 41, 0.75);
+}
+
+.view-recipe-text {
+    font-weight: 600;
+    color: white;
+    text-decoration: none;
 }

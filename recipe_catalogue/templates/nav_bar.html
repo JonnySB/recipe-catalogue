@@ -6,11 +6,20 @@
                 </a>
                 {% if user.is_authenticated %}
         
-                    <ul class="col-12 col-lg-auto me-lg-auto mb-md-0">
-                        <button type="button" class="btn btn-secondary">
+                    <ul class="col-12 col-lg-auto me-lg-auto mb-md-0 nav-bar-options">
+                        <button type="button" class="btn btn-secondary nav-button-options">
                             <a href="{% url 'home' %}" class="nav-link px-2 text-white nav-bar-options">Public Recipe Feed</a>
                         </button>
+
+                        <button type="button" class="btn btn-secondary nav-button-options">
+                            <a href="{% url 'home' %}" class="nav-link px-2 text-white nav-bar-options">Your Recipes</a>
+                        </button>
+
+                        <button type="button" class="btn btn-secondary nav-button-options">
+                            <a href="{% url 'add_recipe' %}" class="nav-link px-2 text-white nav-bar-options">Add new recipe</a>
+                        </button>
                     </ul>
+
 
                     <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
                         <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
@@ -21,8 +30,6 @@
                             {{user}}
                         </button>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">View profile</a></li>
-                            <li><a class="dropdown-item" href="{% url 'add_recipe' %}">Add new recipe</a></li>
                             <li><a class="dropdown-item" href="#">Manage account</a></li>
                             <li><a class="dropdown-item" href="{% url 'logout_user' %}">Log out</a></li>
                         </ul>
@@ -30,7 +37,7 @@
 
                 {% else %}
 
-                    <ul class="col-12 col-lg-auto me-lg-auto mb-md-0">
+                    <ul class="col-12 col-lg-auto me-lg-auto mb-md-0 nav-bar-options">
                         <button type="button" class="btn btn-secondary">
                             <a href="{% url 'home' %}" class="nav-link px-2 text-white nav-bar-options">Public Recipe Feed</a>
                         </button>
