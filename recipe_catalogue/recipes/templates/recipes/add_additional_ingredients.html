@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
 {% block  content %}
 
+
+
+{{ context }}
+
+{{recipe.recipe_name}}
+
+
+
+
 <main>
         <div class="registration-form">
-            <h1 class="h3 mb-3 fw-normal">Add new recipe:</h1>
+            <h1 class="h3 mb-3 fw-normal">Add additional ingredients:</h1>
             
             {% if form.errors %}
                 <div class="alert alert-warning alert-dismissibile fade show alert-register" role="alert">
@@ -18,8 +27,14 @@
                 {{form.as_p}}
 
 
-                <button class="btn btn-primary w-100 py-2" type="submit" value="signup">Submit</button>
+                <button class="btn btn-secondary w-100 py-2" type="submit" value="signup">Add another ingredient?</button>
             </form>
+
+            <button class="btn btn-primary w-100 py-2" type="submit" value="signup">
+                <a href={% url 'home' %} class="view-recipe-text">Create Recipe</a>
+            </button>
+
+
         </div>    
 </main>
 

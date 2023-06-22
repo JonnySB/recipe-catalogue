@@ -22,8 +22,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('recipes/',include('recipes.urls')),
-    path('',RedirectView.as_view(url='recipes/')),
+    path('recipes/', include('recipes.urls')),
+    path('', RedirectView.as_view(url='recipes/')),
 
     # import django's authentication system
     path('users/', include('django.contrib.auth.urls')),
