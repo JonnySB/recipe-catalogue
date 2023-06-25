@@ -16,7 +16,9 @@
             object-fit="cover"
           />
           <div class="card-body increase_card_text_padding">
-            <p class="card-text reduce_bottom_margin">{{recipe.recipe_name}}</p>
+            <p class="card-text reduce_bottom_margin">
+              {{recipe.recipe_name}} - {{recipe.get_visibility_display}} Recipe
+            </p>
             <div
               class="d-flex justify-content-between align-items-center"
               style="font-size: 14px"

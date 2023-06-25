@@ -18,6 +18,14 @@ def index(request):
 
 
 @login_required
+def private_feed(request):
+    users_recipes = Recipe.objects.filter(recipe_author__exact=request.user)
+    context = {'recipes': users_recipes}
+
+    return render(request, 'recipes/private_feed.html', context)
+
+
+@login_required
 def add_recipe(request):
     if request.method == "POST":
         form = AddRecipeForm(request.POST, request.FILES)
@@ -51,7 +59,3 @@ def add_additional_ingredients(request, pk):
 
 class RecipeDetail(DetailView):
     model = Recipe
-
-
-def recipe_detail(request):
-    pass

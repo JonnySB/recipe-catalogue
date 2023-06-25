@@ -8,4 +8,5 @@ urlpatterns = [
          views.add_additional_ingredients, name='add_additional_ingredients'),
     path('recipe_detail/<int:pk>',
          views.RecipeDetail.as_view(), name='recipe_detail'),
+    path('private_feed/', views.private_feed, name='private_feed'),
 ]
