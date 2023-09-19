@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+os.pardir
+
 
 def recipe_image_file_path(instance, filename):
     '''Generate filepath for new recipe_image'''
